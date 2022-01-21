@@ -41,7 +41,7 @@ const DeckList = () => {
         />
       );
     });
-    return <React.Fragment>{listOfDecks}</React.Fragment>;
+    return <div className="m">{listOfDecks}</div>;
   }
   return null;
 };
