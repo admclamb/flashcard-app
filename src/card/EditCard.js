@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { readCard, readDeck, updateCard } from "../utils/api";
 import { useParams, useHistory } from "react-router-dom";
 import CardHeader from "./CardHeader";
+import CardForm from "./CardForm";
 const EditCard = () => {
   const [front, setFront] = useState("");
   const [back, setBack] = useState("");
@@ -57,7 +58,16 @@ const EditCard = () => {
   return (
     <div>
       <CardHeader name={deckName} type="edit" />
-      <h1>{deckName}: Edit Card</h1>
+      <CardForm
+        deckName={deckName}
+        front={front}
+        back={back}
+        handleCancel={handleCancel}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        editCard={true}
+      />
+      {/* <h1>{deckName}: Edit Card</h1>
       <form className="deck-form">
         <div className="form-group mb-3">
           <label htmlFor="front">
@@ -103,7 +113,7 @@ const EditCard = () => {
             Save
           </button>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 };

@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-const cardForm = ({ add }) => {
+const CardForm = ({
+  deckName,
+  front,
+  back,
+  handleCancel,
+  handleChange,
+  handleSubmit,
+  editCard,
+}) => {
   return (
     <div>
-      <CardHeader name={deckName} type="add" />
       <h1>{deckName}: Add Card</h1>
       <form className="deck-form">
         <div className="form-group mb-3">
@@ -40,7 +47,7 @@ const cardForm = ({ add }) => {
         </div>
         <div className="form-group">
           <button className="btn btn-secondary mr-2" onClick={handleCancel}>
-            Done
+            {editCard ? "Cancel" : "Done"}
           </button>
           <button
             type="submit"
@@ -55,4 +62,4 @@ const cardForm = ({ add }) => {
   );
 };
 
-export default Car;
+export default CardForm;
